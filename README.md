@@ -3,4 +3,4 @@ ongoing effort to automate my builds
 
 # How to install
 sudo apt install -y ansible git
-sudo ansible pull -U https://github.com/walchst/ansible.git
+ansible-pull -K --url https://github.com/walchst/ansible.git
