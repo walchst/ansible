@@ -12,11 +12,11 @@
 
 - name: Set KB repeat interval
   become_user: walchst
-  dconf: key="/org/gnome/desktop/peripherals/keyboard/repeat-interval" value="20"
+  dconf: key="/org/gnome/desktop/peripherals/keyboard/repeat-interval" value="'20'"
 
 - name: Set KB delay
   become_user: walchst
-  dconf: key="/org/gnome/desktop/peripherals/keyboard/delay" value="300"
+  dconf: key="/org/gnome/desktop/peripherals/keyboard/delay" value="'300'"
 
 - name: Enable CTRL to locate pointer
   become_user: walchst
