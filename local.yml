@@ -3,6 +3,7 @@
   become: true
   roles:
     - basic
+    - laptop
 
       #  pre_tasks:
       #    - name: update repositories

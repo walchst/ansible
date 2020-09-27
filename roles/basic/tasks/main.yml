@@ -24,4 +24,4 @@
       - cifs-utils
       - hardinfo
       - tmux
-
+      - tree

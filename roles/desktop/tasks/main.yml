@@ -1,0 +1,13 @@
+- name: Installing apt packages desktop 
+  apt:
+    name:
+      - nvidia-detect 
+      - sysfsutils 
+      - openssh-server 
+      - nvidia-driver 
+        
+- name: Installing flatpak packages desktop 
+  flatpak:    
+    name:
+      - com.leinardi.gwe # Nvidia Green with Envy
+      

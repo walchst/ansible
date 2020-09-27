@@ -1,0 +1,19 @@
+- name: "Installing packages: laptop"
+  apt:
+    name:
+      - tlp 
+      - gimp 
+      - openvpn
+      - torbrowser-launcher 
+      - blueman 
+      - telegram-desktop 
+      - remmina 
+      - firmware-misc-nonfree
+
+- name: Installing flatpak packages laptop
+  flatpak:
+    name:
+      - org.signal.Signal
+        org.libretro.RetroArch
+
+        #others: exodus, syncient, PlexAmp appimage from plex
