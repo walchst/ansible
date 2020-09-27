@@ -9,7 +9,8 @@
       - telegram-desktop 
       - remmina 
       - firmware-misc-nonfree
-
+  tags: laptop
+  
 - name: Add flathub repo
   flatpak_remote:
     name: flathub
