@@ -49,7 +49,11 @@
 - name: Trackpad natural scroll
   become_user: walchst
   dconf: key="/org/gnome/desktop/peripherals/mouse/natural-scroll" value="true"
- 
+
+- name: Set GNOME Wallpaper
+  become_user: walchst
+  dconf: key="/org/gnome/desktop/background/picture-uri" value="'file:///usr/share/backgrounds/gnome/ColdWarm.jpg'"
+
   # Changes pending
   #  - Automatic brightness disabled
   #  - keyboard brightness max
