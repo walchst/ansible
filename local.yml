@@ -12,7 +12,7 @@
       changed_when: False
       tags: build
 
-      #  tasks:
-#    - include: tasks/users.yml
+  tasks:
+    - include: gnome.yml
 #    - include: tasks/cron.yml
 #    - include: tasks/packages.yml

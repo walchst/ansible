@@ -1,0 +1,4 @@
+- name: Set gedit scheme
+  become_user: walchst
+  dconf: key="/org/gnome/gedit/preferences/editor/scheme" value="'cobalt'"
+
