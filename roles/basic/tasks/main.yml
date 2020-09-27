@@ -3,3 +3,6 @@
     name:
       - git
       - vim
+      - build-essential
+      - dkms
+      - linux-headers-$(uname -r)
