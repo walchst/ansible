@@ -29,6 +29,6 @@
 - name: Set gedit scheme
   #    become_user: walchst 
     #      dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
-    dconf: key="/org/gnome/gedit/preferences/editor/scheme" value="'cobalt'"
+  dconf: key="/org/gnome/gedit/preferences/editor/scheme" value="'cobalt'"
       
         #others: exodus, syncient, PlexAmp appimage from plex
