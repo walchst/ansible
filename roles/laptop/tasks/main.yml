@@ -25,9 +25,8 @@
 
 - name: Installing flatpak packages laptop
   flatpak:
-    name: 
-     - org.videolan.VLC
-     - org.signal.Signal
-     - org.libretro.RetroArch
+    name: org.videolan.VLC
+       # - org.signal.Signal
+       #- org.libretro.RetroArch
 
         #others: exodus, syncient, PlexAmp appimage from plex
