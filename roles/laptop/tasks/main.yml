@@ -10,11 +10,18 @@
       - remmina 
       - firmware-misc-nonfree
 
-- name: Remove the gedit flatpak
-    community.general.flatpak:
-      name: org.gnome.gedit
-      state: absent
+- name: Add flathub repo
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
 
+ - name: Install MakeMKV
+   flatpak:
+     name: com.makemkv.MakeMKV
+     state: present
+     method: user
 
               #- name: Installing flatpak packages laptop
               #  community.general.flatpak:
