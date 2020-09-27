@@ -1,4 +1,4 @@
-- name: Installing packages: laptop
+- name: Installing packages laptop
   apt:
     name:
       - tlp 
