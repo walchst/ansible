@@ -17,17 +17,12 @@
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     method: user
 
-- name: Install MakeMKV
-  flatpak:
-    name: com.makemkv.MakeMKV
-    state: absent 
-    method: user
-
 - name: Installing system flatpaks
   flatpak:
-    name: org.videolan.VLC
-    state: absent
-       # - org.signal.Signal
-       #- org.libretro.RetroArch
+    name: org.libretro.RetroArch
+
+- name: Installing Signal
+  flatpak:
+    name: org.signal.Signal
 
         #others: exodus, syncient, PlexAmp appimage from plex
