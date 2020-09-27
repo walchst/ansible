@@ -1,2 +1,6 @@
 - name: "Installing VIM"
   apt: pkg=vim state=present
+
+- name: "Installing git"
+  apt: pkg=git state=present
+
