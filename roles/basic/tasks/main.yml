@@ -5,4 +5,23 @@
       - vim
       - build-essential
       - dkms
-      - linux-headers-$(uname -r)
+        # - linux-headers-$(uname -r)
+      - ttf-mscorefonts-installer 
+      - rar
+      - unrar
+      - libavcodec-extra
+      - gstreamer1.0-libav
+      - gstreamer1.0-plugins-ugly
+      - gstreamer1.0-vaapi
+      - vlc
+      - neofetch
+      - htop
+      - stow
+      - synaptic
+      - curl
+      - mlocate
+      - iperf
+      - cifs-utils
+      - hardinfo
+      - tmux
+
