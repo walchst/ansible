@@ -1,4 +1,4 @@
-- name: "Installing packages: laptop"
+- name: Installing packages: laptop
   apt:
     name:
       - tlp 
@@ -12,8 +12,7 @@
 
 - name: Installing flatpak packages laptop
   flatpak:
-    name:
-      - org.signal.Signal
-      - org.libretro.RetroArch
+    name: org.signal.Signal
+    #      - org.libretro.RetroArch
 
         #others: exodus, syncient, PlexAmp appimage from plex
