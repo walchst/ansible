@@ -6,11 +6,11 @@
     - laptop
 
   pre_tasks:
-   - name: update repositories
-     apt:
-     update_cache: yes
-     changed_when: False
-     tags: build
+    - name: update repositories
+      apt:
+      update_cache: yes
+      changed_when: False
+      tags: build
 
       #  tasks:
 #    - include: tasks/users.yml
