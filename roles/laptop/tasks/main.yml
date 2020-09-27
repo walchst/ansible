@@ -14,6 +14,6 @@
   flatpak:
     name:
       - org.signal.Signal
-        org.libretro.RetroArch
+      - org.libretro.RetroArch
 
         #others: exodus, syncient, PlexAmp appimage from plex
