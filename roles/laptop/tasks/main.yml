@@ -23,9 +23,11 @@
     state: absent 
     method: user
 
-- name: Installing flatpak packages laptop
+- name: Installing system flatpaks
   flatpak:
-    name: org.videolan.VLC
+    name: "{{ item }}"
+    with_items: 
+      - org.videolan.VLC
        # - org.signal.Signal
        #- org.libretro.RetroArch
 
