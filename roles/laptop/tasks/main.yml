@@ -17,11 +17,11 @@
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     method: user
 
- - name: Install MakeMKV
-   flatpak:
-     name: com.makemkv.MakeMKV
-     state: present
-     method: user
+- name: Install MakeMKV
+  flatpak:
+    name: com.makemkv.MakeMKV
+    state: present
+    method: user
 
               #- name: Installing flatpak packages laptop
               #  community.general.flatpak:
