@@ -25,9 +25,8 @@
 
 - name: Installing system flatpaks
   flatpak:
-    name: "{{ item }}"
-    with_items: 
-      - org.videolan.VLC
+    name: org.videolan.VLC
+    state: absent
        # - org.signal.Signal
        #- org.libretro.RetroArch
 
