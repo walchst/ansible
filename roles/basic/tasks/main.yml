@@ -1,5 +1,5 @@
 - name: "Installing packages"
-  apt: pkg={{ item }} state=present
-  with_items:
-    - git
-    - vim
+  apt:
+    name:
+      - git
+      - vim
