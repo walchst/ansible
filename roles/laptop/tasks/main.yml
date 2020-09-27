@@ -20,12 +20,12 @@
 - name: Install MakeMKV
   flatpak:
     name: com.makemkv.MakeMKV
-    state: present
+    state: absent 
     method: user
 
-              #- name: Installing flatpak packages laptop
-              #  community.general.flatpak:
-              # name: org.videolan.VLC
+- name: Installing flatpak packages laptop
+  flatpak:
+    name: org.videolan.VLC
               #    state: absent 
         #      - org.signal.Signal
     #      - org.libretro.RetroArch
