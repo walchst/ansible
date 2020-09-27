@@ -10,10 +10,16 @@
       - remmina 
       - firmware-misc-nonfree
 
-- name: Installing flatpak packages laptop
-  community.general.flatpak:
-    name: org.videolan.VLC
-    state: absent 
+- name: Remove the gedit flatpak
+    community.general.flatpak:
+      name: org.gnome.gedit
+      state: absent
+
+
+              #- name: Installing flatpak packages laptop
+              #  community.general.flatpak:
+              # name: org.videolan.VLC
+              #    state: absent 
         #      - org.signal.Signal
     #      - org.libretro.RetroArch
 
