@@ -13,7 +13,7 @@
 - name: Installing flatpak packages laptop
   community.general.flatpak:
     name: org.videolan.VLC
-    state: present
+    state: absent 
         #      - org.signal.Signal
     #      - org.libretro.RetroArch
 
