@@ -12,7 +12,8 @@
 
 - name: Installing flatpak packages laptop
   flatpak:
-    name: org.signal.Signal
+    name: 
+      - org.signal.Signal
     #      - org.libretro.RetroArch
 
         #others: exodus, syncient, PlexAmp appimage from plex
