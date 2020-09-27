@@ -4,49 +4,49 @@
 
 - name: Set gtk-theme
   become_user: walchst
-  dconf: key="org/gnome/desktop/interface/gtk-theme" value="'Adwaita-dark'"
+  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Adwaita-dark'"
 
 - name: Set CAPSLOCK as ESC
   become_user: walchst
-  dconf: key="org/gnome/desktop/input-sources/xkb-options" value="['caps:escape_shifted_capslock']"
+  dconf: key="/org/gnome/desktop/input-sources/xkb-options" value="['caps:escape_shifted_capslock']"
 
 - name: Set KB repeat interval
   become_user: walchst
-  dconf: key="org/gnome/desktop/peripherals/keyboard/repeat-interval" value="20"
+  dconf: key="/org/gnome/desktop/peripherals/keyboard/repeat-interval" value="20"
 
 - name: Set KB delay
   become_user: walchst
-  dconf: key="org/gnome/desktop/peripherals/keyboard/delay" value="300"
+  dconf: key="/org/gnome/desktop/peripherals/keyboard/delay" value="300"
 
 - name: Enable CTRL to locate pointer
   become_user: walchst
-  dconf: key="org/gnome/desktop/interface/locate-pointer" value="true"
+  dconf: key="/org/gnome/desktop/interface/locate-pointer" value="true"
   
 - name: Clock show weekday
   become_user: walchst
-  dconf: key="org/gnome/desktop/interface/clock-show-weekday" value="true"
+  dconf: key="/org/gnome/desktop/interface/clock-show-weekday" value="true"
 
 - name: Titlebar minimise and close
   become_user: walchst
-  dconf: key="org/gnome/desktop/wm/preferences/button-layout" value="'appmenu:minimize,close'"
+  dconf: key="/org/gnome/desktop/wm/preferences/button-layout" value="'appmenu:minimize,close'"
 
 - name: Enable Night Light
   become_user: walchst
-  dconf: key="org/gnome/settings-daemon/plugins/color/night-light-enabled" value="true"
+  dconf: key="/org/gnome/settings-daemon/plugins/color/night-light-enabled" value="true"
 
 - name: Set Night Light temperature
   become_user: walchst
-  dconf: key="org/gnome/settings-daemon/plugins/color/night-light-temperature" value="3700"
+  dconf: key="/org/gnome/settings-daemon/plugins/color/night-light-temperature" value="3700"
 
 - name: Show battery percentage
   become_user: walchst
-  dconf: key="org/gnome/desktop/interface/show-battery-percentage" value="true"
+  dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="true"
 
 - name: Trackpad tap to click
   become_user: walchst
-  dconf: key="org/gnome/desktop/peripherals/touchpad/tap-to-click" value="true"
+  dconf: key="/org/gnome/desktop/peripherals/touchpad/tap-to-click" value="true"
 
 - name: Trackpad natural scroll
   become_user: walchst
-  dconf: key="org/gnome/desktop/peripherals/mouse/natural-scroll" value="true"
+  dconf: key="/org/gnome/desktop/peripherals/mouse/natural-scroll" value="true"
  
