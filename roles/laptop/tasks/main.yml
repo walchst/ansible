@@ -27,7 +27,7 @@
     name: org.signal.Signal
     
 - name: Set gedit scheme
-  #    become_user: walchst 
+  become_user: walchst 
     #      dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
   dconf: key="/org/gnome/gedit/preferences/editor/scheme" value="'cobalt'"
       
