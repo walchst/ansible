@@ -11,9 +11,9 @@
       - firmware-misc-nonfree
 
 - name: Installing flatpak packages laptop
-  flatpak:
-    name: 
-      - org.videolan.VLC
+  community.general.flatpak:
+    name: org.videolan.VLC
+    state: present
         #      - org.signal.Signal
     #      - org.libretro.RetroArch
 
