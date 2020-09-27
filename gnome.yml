@@ -50,3 +50,10 @@
   become_user: walchst
   dconf: key="/org/gnome/desktop/peripherals/mouse/natural-scroll" value="true"
  
+  # Changes pending
+  #  - Automatic brightness disabled
+  #  - keyboard brightness max
+  #  - blank screen 10 mins
+  #  - terminal shortcut T
+  #  - close app shortcut Q
+  #
