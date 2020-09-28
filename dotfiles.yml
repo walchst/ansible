@@ -1,7 +1,9 @@
-- name: download .dotfiles
+- name: Clone .dotfiles repo
   git:
     repo: https://github.com/walchst/.dotfiles.git 
     dest: "/home/walchst/testing"
+    dest: "~/testing2"
+    update: yes
 
 # remove file
 #rm ~/.bashrc # conflicts with stow initially
