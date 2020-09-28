@@ -1,0 +1,11 @@
+- name: base-16 - get base16-shell so that colors show up correctly in vim
+  git:
+    repo: https://github.com/walchst/.dotfiles.git 
+    dest: "/home/{{ username }}/testing"
+
+# remove file
+#rm ~/.bashrc # conflicts with stow initially
+
+# shell
+#stow -nvSt ~ alacritty bash git htop retroarch vim # error with README.MD, investigate how to exclude using *
+
