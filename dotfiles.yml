@@ -1,7 +1,7 @@
 - name: download .dotfiles
   git:
     repo: https://github.com/walchst/.dotfiles.git 
-    dest: "/home/{{ username }}/testing"
+    dest: "/home/walchst/testing"
 
 # remove file
 #rm ~/.bashrc # conflicts with stow initially
