@@ -1,7 +1,7 @@
-- name: base-16 - get base16-shell so that colors show up correctly in vim
+- name: download .dotfiles
   git:
-    repo: https://github.com/walchst/.dotfiles.git 
-    dest: "/home/{{ username }}/testing"
+  repo: https://github.com/walchst/.dotfiles.git 
+  dest: "/home/{{ username }}/testing"
 
 # remove file
 #rm ~/.bashrc # conflicts with stow initially
