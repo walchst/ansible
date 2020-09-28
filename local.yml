@@ -13,6 +13,7 @@
       tags: build
 
   tasks:
-    - include: gnome.yml
 #    - include: tasks/cron.yml
+    - include: gnome.yml
+    - include: dotfiles.yml
 #    - include: tasks/packages.yml
