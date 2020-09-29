@@ -1,65 +1,73 @@
 ---
 
-- name: Set gedit scheme
+- name: "gnome gedit scheme"
   become_user: walchst
   dconf: key="/org/gnome/gedit/preferences/editor/scheme" value="'cobalt'"
 
-- name: Set gtk-theme
+- name: "gnome theme"
   become_user: walchst
   dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Adwaita-dark'"
 
-- name: Set CAPSLOCK as ESC
+- name: "gnome capslock as esc"
   become_user: walchst
   dconf: key="/org/gnome/desktop/input-sources/xkb-options" value="['caps:escape_shifted_capslock']"
 
-- name: Set KB repeat interval
+- name: "gnome kb repeat interval"
   become_user: walchst
   dconf: key="/org/gnome/desktop/peripherals/keyboard/repeat-interval" value="'20'"
 
-- name: Set KB delay
+- name: "gnome kb repeat delay"
   become_user: walchst
   dconf: key="/org/gnome/desktop/peripherals/keyboard/delay" value="'300'"
 
-- name: Enable CTRL to locate pointer
+- name: "gnome enable ctrl to locate pointer"
   become_user: walchst
   dconf: key="/org/gnome/desktop/interface/locate-pointer" value="true"
   
-- name: Clock show weekday
+- name: "gnome enable show weekday"
   become_user: walchst
   dconf: key="/org/gnome/desktop/interface/clock-show-weekday" value="true"
 
-- name: Titlebar minimise and close
+- name: "gnome titlebar: minimise and close"
   become_user: walchst
   dconf: key="/org/gnome/desktop/wm/preferences/button-layout" value="'appmenu:minimize,close'"
 
-- name: Enable Night Light
+- name: "gnome enable night light"
   become_user: walchst
   dconf: key="/org/gnome/settings-daemon/plugins/color/night-light-enabled" value="true"
 
-  #- name: Set Night Light temperature # does not seem to set 
+  #- name: "gnome configure night light temp" # does not seem to set 
   #  become_user: walchst
   #  dconf: key="/org/gnome/settings-daemon/plugins/color/night-light-temperature" value="3700"
 
-- name: Show battery percentage
+- name: "gnome show battery percentage"
   become_user: walchst
   dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="true"
 
-- name: Trackpad tap to click
+- name: "gnome enable trackpad tap to click"
   become_user: walchst
   dconf: key="/org/gnome/desktop/peripherals/touchpad/tap-to-click" value="true"
 
-- name: Trackpad natural scroll
+- name: "gnome enable trackpad natural scroll"
   become_user: walchst
   dconf: key="/org/gnome/desktop/peripherals/mouse/natural-scroll" value="true"
 
-- name: Set GNOME Wallpaper
+- name: "gnome set wallpaper"
   become_user: walchst
   dconf: key="/org/gnome/desktop/background/picture-uri" value="'file:///usr/share/backgrounds/gnome/ColdWarm.jpg'"
 
+- name: "gnome disble automatic brightness"
+  become_user: walchst
+  dconf: key="/org/gnome/settings-daemon/plugins/power/ambient-enabled" value="false"
+  when: ansible_product_name == "XPS 13 9300"
+
+- name: "gnome blank screen timeout"
+  become_user: walchst
+  dconf: key="/org/gnome/desktop/session/idle-delay" value="'600'"
+  when: ansible_product_name == "XPS 13 9300"
+  
   # Changes pending
-  #  - Automatic brightness disabled
   #  - keyboard brightness max
-  #  - blank screen 10 mins
   #  - terminal shortcut T
   #  - close app shortcut Q
   #

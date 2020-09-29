@@ -1,13 +1,20 @@
-- name: "installing packages desktop" 
+- name: "apt packages desktop" 
   apt:
     name:
       - nvidia-detect 
       - nvidia-driver 
       - sysfsutils 
       - openssh-server 
+      - steam
+      - libgl1-nvidia-glvnd-glx:i386
     state: latest
   when: ansible_os_family == 'Debian'
         
-- name: Installing NVidia Green with Envy flatpak
+- name: "flatpak - nvidia green with envy"
   flatpak:    
     name: com.leinardi.gwe 
+
+- name: "flatpak - retroarch"
+  flatpak:
+    name: org.libretro.Retroarch
+

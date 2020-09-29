@@ -1,4 +1,4 @@
-- name: "installing packages laptop"
+- name: "apt packages laptop"
   apt:
     name:
       - tlp 
@@ -12,18 +12,7 @@
     state: latest
   when: ansible_os_family == 'Debian'
  
-- name: Add flathub repo
-  flatpak_remote:
-    name: flathub
-    state: present
-    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
-    method: user
-
-- name: Installing system flatpaks
-  flatpak:
-    name: org.libretro.RetroArch
-
-- name: Installing Signal
+- name: "flatpak - signal"
   flatpak:
     name: org.signal.Signal
     
