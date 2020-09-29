@@ -13,8 +13,9 @@
 - name: "flatpak - nvidia green with envy"
   flatpak:    
     name: com.leinardi.gwe 
+    state: present
 
 - name: "flatpak - retroarch"
   flatpak:
     name: org.libretro.Retroarch
-
+    state: present

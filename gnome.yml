@@ -14,11 +14,11 @@
 
 - name: "gnome kb repeat interval"
   become_user: walchst
-  dconf: key="/org/gnome/desktop/peripherals/keyboard/repeat-interval" value="'20'"
+  dconf: key="/org/gnome/desktop/peripherals/keyboard/repeat-interval" value="uint32 20"
 
 - name: "gnome kb repeat delay"
   become_user: walchst
-  dconf: key="/org/gnome/desktop/peripherals/keyboard/delay" value="'300'"
+  dconf: key="/org/gnome/desktop/peripherals/keyboard/delay" value="uint32 300"
 
 - name: "gnome enable ctrl to locate pointer"
   become_user: walchst
@@ -36,9 +36,9 @@
   become_user: walchst
   dconf: key="/org/gnome/settings-daemon/plugins/color/night-light-enabled" value="true"
 
-  #- name: "gnome configure night light temp" # does not seem to set 
-  #  become_user: walchst
-  #  dconf: key="/org/gnome/settings-daemon/plugins/color/night-light-temperature" value="3700"
+- name: "gnome configure night light temp" # does not seem to set 
+  become_user: walchst
+  dconf: key="/org/gnome/settings-daemon/plugins/color/night-light-temperature" value="uint32 3700"
 
 - name: "gnome show battery percentage"
   become_user: walchst
@@ -63,7 +63,7 @@
 
 - name: "gnome blank screen timeout"
   become_user: walchst
-  dconf: key="/org/gnome/desktop/session/idle-delay" value="'600'"
+  dconf: key="/org/gnome/desktop/session/idle-delay" value="uint32 600"
   when: ansible_product_name == "XPS 13 9300"
   
   # Changes pending
