@@ -10,7 +10,7 @@
     - name: update repositories index
       apt:
         update_cache: yes
-      when: ansible_distribution == "Debian"
+        #when: ansible_distribution == "Debian"
       changed_when: False
       tags: build
 
