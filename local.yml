@@ -1,22 +1,24 @@
+---
+
 - hosts: localhost
   connection: local
   user: walchst
   become: true
-  roles:
-    - basic
-    - laptop
 
   pre_tasks:
-    - name: update repositories index
+    - name: install updates (Debian)
       apt:
+        upgrade: dist
         update_cache: yes
-      #when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
       when: ansible_os_family == 'Debian'
-      changed_when: False
-      tags: build
 
   tasks:
 #    - include: tasks/cron.yml
     - include: gnome.yml
-#    - include: dotfiles.yml
+      when: lookup('env','DESKTOP_SESSION') == "gnome"
+    - include: dotfiles.yml
+    - include: roles-laptop.yml
+      when: ansible_product_name == "XPS 13 9300"
+    - include: roles-desktop.yml
+      when: ansible_product_name is search("Standard PC")
 #    - include: tasks/packages.yml

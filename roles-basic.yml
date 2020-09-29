@@ -1,4 +1,4 @@
-- name: "Installing packages"
+- name: "installing packages"
   apt:
     name:
       - git
@@ -25,3 +25,5 @@
       - hardinfo
       - tmux
       - tree
+    state: latest
+  when: ansible_os_family == 'Debian'

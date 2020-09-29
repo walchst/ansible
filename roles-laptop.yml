@@ -1,4 +1,4 @@
-- name: Installing packages laptop
+- name: "installing packages laptop"
   apt:
     name:
       - tlp 
@@ -9,8 +9,9 @@
       - telegram-desktop 
       - remmina 
       - firmware-misc-nonfree
-  tags: laptop
-  
+    state: latest
+  when: ansible_os_family == 'Debian'
+ 
 - name: Add flathub repo
   flatpak_remote:
     name: flathub
