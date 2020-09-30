@@ -1,3 +1,8 @@
+---
+
+#sudo dpkg --add-architecture i386 
+# sudo apt update - not sure if below works for steam after dpkg
+
 - name: "apt packages desktop" 
   apt:
     name:
@@ -8,6 +13,7 @@
       - steam
       - libgl1-nvidia-glvnd-glx:i386
     state: latest
+    update_cache: yes
   when: ansible_os_family == 'Debian'
         
 - name: "flatpak - nvidia green with envy"
