@@ -3,6 +3,7 @@
     name:
       - git
       - vim
+      - flatpak
       - build-essential
       - dkms
         # - linux-headers-$(uname -r)
