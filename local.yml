@@ -14,12 +14,13 @@
 
   tasks:
 #    - include: tasks/cron.yml
-    - include: gnome.yml
-      when: lookup('env','DESKTOP_SESSION') == "gnome"
-    - include: dotfiles.yml
     - include: roles-common.yml
     - include: roles-laptop.yml
       when: ansible_product_name == "XPS 13 9300"
     - include: roles-desktop.yml
       when: ansible_product_name is search("Standard PC")
+    - include: dotfiles.yml
+    - include: gnome.yml
+      when: lookup('env','DESKTOP_SESSION') == "gnome"
 #    - include: tasks/packages.yml
+#
