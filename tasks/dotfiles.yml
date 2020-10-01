@@ -3,8 +3,8 @@
   become_user: walchst
   git:
     repo: https://github.com/walchst/.dotfiles.git 
-    dest: "/home/walchst/testing2"
-    update: yes
+    dest: "/home/walchst/.dotfiles"
+    update: no
 
 # remove file
 #rm ~/.bashrc # conflicts with stow initially
