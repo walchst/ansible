@@ -4,6 +4,7 @@
   become_user: walchst
   become: true
   block:
+
    - name: "gnome gedit scheme"
      dconf: key="/org/gnome/gedit/preferences/editor/scheme" value="'cobalt'"
 

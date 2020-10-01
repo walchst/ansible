@@ -1,14 +1,25 @@
-- name: "Clone .dotfiles repo"
-  become: true
+---
+
+- name: "Manage .dotfiles"
   become_user: walchst
-  git:
-    repo: https://github.com/walchst/.dotfiles.git 
-    dest: "/home/walchst/.dotfiles"
-    update: no
+  become: true
+  block:
 
-# remove file
-#rm ~/.bashrc # conflicts with stow initially
+    - name: "Clone .dotfiles repo"
+      git:
+        repo: https://github.com/walchst/.dotfiles.git 
+        dest: "~/.dotfiles"
+        update: no
 
-# shell
-#stow -nvSt ~ alacritty bash git htop retroarch vim # error with README.MD, investigate how to exclude using *
+    - name: "Remove existing bashrc"
+      shell:
+        cmd: cp .bashrc .bashrc.backup
+        chdir: ~/
+        creates: .bashrc.backup
+
+    - name: "Stow .dotfiles"
+      shell:
+        cmd: stow -vSt ~ htop git vim > ../.stowed.flag
+        chdir: ~/.dotfiles
+        creates: ~/.stowed.flag
 
