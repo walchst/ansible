@@ -44,3 +44,15 @@
     value: "10"
     state: present
 
+- name: "set grub timeout to 1 in /etc/default/grub"
+  replace: 
+    dest: '/etc/default/grub'
+    regexp: '^(GRUB_TIMEOUT)=[0-9]*$'
+    replace: '\1=1'
+  register: grubtimeout
+
+- name: "update grub"
+  shell:
+    cmd: update-grub
+  when: grubtimeout.changed
+
