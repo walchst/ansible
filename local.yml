@@ -21,4 +21,4 @@
     - include: tasks/dotfiles.yml
     - include: tasks/gnome.yml
       when: lookup('env','DESKTOP_SESSION') == "gnome"
-    - cleanup: tasks/cleanup.yml
+    - include: tasks/cleanup.yml
