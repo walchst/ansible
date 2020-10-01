@@ -28,6 +28,7 @@
       - hardinfo
       - tmux
       - tree
+      - pip
     state: latest
   when: ansible_os_family == 'Debian'
 
@@ -56,3 +57,7 @@
     cmd: update-grub
   when: grubtimeout.changed
 
+- name: "install psutil - reqd for dconf"
+  pip:
+    name: psutil
+    state: latest
