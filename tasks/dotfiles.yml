@@ -1,8 +1,9 @@
-- name: Clone .dotfiles repo
+- name: "Clone .dotfiles repo"
+  become: true
+  become_user: walchst
   git:
     repo: https://github.com/walchst/.dotfiles.git 
-    dest: "/home/walchst/testing"
-    #    dest: "~/testing2"
+    dest: "/home/walchst/testing2"
     update: yes
 
 # remove file
