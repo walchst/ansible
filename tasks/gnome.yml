@@ -75,6 +75,7 @@
        key: "/org/gnome/desktop/background/picture-uri" 
        value: "'file:///usr/share/backgrounds/gnome/ColdWarm.jpg'"
 
+    # shortcuts 
    - name: "gnome close shortcut key"
      dconf:
        key: "/org/gnome/desktop/wm/keybindings/close"
@@ -111,7 +112,7 @@
        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
        value: "'<Super>e'"
 
-   # All of your custom shortcuts must also be added to an array.
+   # custom shortcuts must also be added to an array
    - name: "gnome enable custom keybindings"
      dconf:
        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
