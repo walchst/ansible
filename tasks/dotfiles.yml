@@ -13,13 +13,13 @@
 
     - name: "Remove existing bashrc"
       shell:
-        cmd: cp .bashrc .bashrc.backup
+        cmd: mv .bashrc .bashrc.backup
         chdir: ~/
         creates: .bashrc.backup
 
     - name: "Stow .dotfiles"
       shell:
-        cmd: stow -vSt ~ htop git vim > ../.stowed.flag
+        cmd: stow -vSt ~ bash htop git vim > ../.stowed.flag
         chdir: ~/.dotfiles
         creates: ~/.stowed.flag
 
