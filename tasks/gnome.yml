@@ -75,7 +75,12 @@
        key: "/org/gnome/desktop/background/picture-uri" 
        value: "'file:///usr/share/backgrounds/gnome/ColdWarm.jpg'"
 
-   # Custom shortcuts are more complicated.  For each shortcut, you have to define a name, a command, and a binding.
+   - name: "gnome close shortcut key"
+     dconf:
+       key: "/org/gnome/desktop/wm/keybindings/close"
+       value: "['<Super>q']"
+
+   # Custom shortcuts are more complicated. For each shortcut, you have to define a name, a command, and a binding.
    - name: "gnome terminal shortcut name"
      dconf:
        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
@@ -91,6 +96,27 @@
        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
        value: "'<Super>t'"
 
+   - name: "gnome files shortcut name"
+     dconf:
+       key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name"
+       value: "'nautilus'"
+
+   - name: "gnome files shortcut command"
+     dconf:
+       key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command"
+       value: "'nautilus'"
+        
+   - name: "gnome files shortcut binding" 
+     dconf:
+       key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
+       value: "'<Super>e'"
+
+   # All of your custom shortcuts must also be added to an array.
+   - name: "gnome enable custom keybindings"
+     dconf:
+       key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+       value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
+   
    - name: "gnome disble automatic brightness"
      dconf: 
        key: "/org/gnome/settings-daemon/plugins/power/ambient-enabled" 
@@ -102,4 +128,9 @@
        key: "/org/gnome/desktop/session/idle-delay" 
        value: "uint32 600"
      when: ansible_product_name == "XPS 13 9300"
-  
+
+   - name: "gnome disable hot corner"
+     dconf:
+       key: "/org/gnome/desktop/interface/enable-hot-corners"
+       value: "false"
+
