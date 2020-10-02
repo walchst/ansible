@@ -1,7 +1,12 @@
 ---
+- name: "Retrieve dpkg architecture"
+  shell: dpkg --print-foreign-architectures
+  register: dpkg_arch
 
-#sudo dpkg --add-architecture i386 
-# sudo apt update - not sure if below works for steam after dpkg
+- name: "Add i386 architecture"
+  #shell: dpkg --add-architecture i386
+  shell: echo installing i386
+  when: dpkg_arch_contents.stdout.find('i386') != -1
 
 - name: "apt packages desktop" 
   apt:
