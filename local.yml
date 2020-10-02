@@ -5,6 +5,14 @@
   user: walchst
   become: true
   tasks:
+    
+    - name: "Update and validate the sudoers file"
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^walchst ALL='
+        line: 'walchst ALL=(ALL) NOPASSWD: ALL'
+        validate: /usr/sbin/visudo -cf %s
 
     # Debian bullseye repos
     - name: "Update repos"
