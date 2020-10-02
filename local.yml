@@ -4,21 +4,50 @@
   connection: local
   user: walchst
   become: true
+  tasks:
 
-  pre_tasks:
-    - name: install updates (Debian)
+    # Debian bullseye repos
+    - name: "Update repos"
+      block:
+        - name: "Add closest mirror with non-free and contrib repos"
+          apt_repository:
+            repo: deb http://mirror.amaze.com.au/debian/ bullseye main non-free contrib
+            state: present
+
+        - name: "Add closest source mirror with non-free and contrib repos"
+          apt_repository:
+            repo: deb-src http://mirror.amaze.com.au/debian/ bullseye main non-free contrib
+            state: present
+
+        - name: "Add non-free and contrib security repos"
+          apt_repository:
+            repo: deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+            state: present
+
+        - name: "Add non-free and contrib source security repos"
+          apt_repository:
+            repo: deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
+            state: present
+      when: ansible_distribution == 'Debian'
+
+    - name: "Install updates (Debian-based distro)"
       apt:
         upgrade: dist
         update_cache: yes
       when: ansible_os_family == 'Debian'
 
-  tasks:
     - include: roles/common.yml
+
     - include: roles/laptop.yml
       when: ansible_product_name == "XPS 13 9300"
+
     - include: roles/desktop.yml
       when: ansible_product_name is search("Standard PC")
+
     - include: tasks/dotfiles.yml
+
     - include: tasks/gnome.yml
       when: lookup('env','DESKTOP_SESSION') == "gnome"
+
     - include: tasks/cleanup.yml
+
