@@ -6,6 +6,7 @@
       - git
       - vim
       - flatpak
+      - gnome-software-plugin-flatpak
       - build-essential
       - dkms
         # - linux-headers-$(uname -r)
@@ -32,12 +33,12 @@
     state: latest
   when: ansible_os_family == 'Debian'
 
-- name: "flathub repo"
+- name: "flathub.org repo"
   flatpak_remote:                                                                                                                                         
     name: flathub                                                                                                                                         
     state: present                                                                                                                                        
-    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo                                                                                      
-    method: user
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo                                                                                      
+    #    method: user
 
 - name: "set vm.swappiness to 10 in /etc/sysctl.conf"
   sysctl:
