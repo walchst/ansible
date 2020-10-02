@@ -1,12 +1,13 @@
 ---
-- name: "Retrieve dpkg architecture"
+
+- name: "Retrieve dpkg foreign architecture"
   shell: dpkg --print-foreign-architectures
   register: dpkg_arch
+  changed_when: dpkg_arch.stdout.find('i386')
 
-- name: "Add i386 architecture"
-  #shell: dpkg --add-architecture i386
-  shell: echo installing i386
-  when: dpkg_arch_contents.stdout.find('i386') != -1
+- name: "Enable i386 architecture"
+  shell: dpkg --add-architecture i386
+  when: dpkg_arch.changed
 
 - name: "apt packages desktop" 
   apt:
@@ -15,7 +16,7 @@
       - nvidia-driver 
       - sysfsutils 
       - openssh-server 
-      - steam
+        #- steam
       - libgl1-nvidia-glvnd-glx:i386
     state: latest
     update_cache: yes
