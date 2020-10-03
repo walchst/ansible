@@ -85,7 +85,7 @@
    - name: "gnome terminal shortcut name"
      dconf:
        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
-       value: "'terminal'"
+       value: "'gnome-terminal'"
  
    - name: "gnome terminal shortcut command"
      dconf:
@@ -95,7 +95,7 @@
    - name: "gnome terminal shortcut binding"
      dconf:
        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
-       value: "'<Super>t'"
+       value: "'<Primary><Alt>t'"
 
    - name: "gnome files shortcut name"
      dconf:

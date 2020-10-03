@@ -19,5 +19,3 @@
     name: org.signal.Signal
     state: present 
     
-        #others: exodus, syncient, PlexAmp appimage from plex
-        #
