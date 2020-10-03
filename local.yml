@@ -2,8 +2,8 @@
 
 - hosts: localhost
   connection: local
-  user: walchst
   become: true
+  #user: walchst
   tasks:
     
     - name: "Update and validate the sudoers file"

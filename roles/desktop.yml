@@ -32,37 +32,7 @@
     name: org.libretro.Retroarch
     state: present
 
-# Xbox Wireless Controller (xow)
-- name: "xow dependencies"
-  apt:
-    name: 
-      - cabextract
-      - libusb-1.0-0-dev 
-
-- name: "clone xow repo"
-  git:
-    repo: https://github.com/medusalix/xow.git
-    dest: /usr/local/xow
-
-- name: "build xow" 
-  make:
-    chdir: /usr/local/xow
-    
-- name: "install xow as root"
-  make:
-    chdir: /usr/local/xow
-    target: install
-  become: yes
-
-- name: "start xow service"
-  service:
-    name: xow
-    state: started
-    enabled: yes
-
-# sudo make BUILD=RELEASE
-# sudo make install
-# sudo systemctl enable xow
-# sudo systemctl start xow
-# # may need restart, to pair
-# sudo systemctl kill -s SIGUSR1 xow
+- name: "xbox controllers xow service"
+  include: tasks/xow.yml
+  when: xow_service.exists == false
+  
