@@ -34,5 +34,5 @@
 
 - name: "xbox controllers xow service"
   include: tasks/xow.yml
-  when: xow_service.exists == false
+  when: ansible_facts.services["xow.service"] is not defined 
   

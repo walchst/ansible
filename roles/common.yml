@@ -1,5 +1,8 @@
 ---
 
+- name: "get service facts"
+  service_facts:
+
 - name: "apt packages common"
   apt:
     name:
@@ -30,6 +33,7 @@
       - tmux
       - tree
       - pip
+      - dpkg # required for Fedora
     state: latest
   when: ansible_os_family == 'Debian'
 

@@ -2,7 +2,7 @@
 
 # Xbox Wireless Controller (xow)
 - name: "xow dependencies"
-  apt:
+  package:
     name: 
       - cabextract
       - libusb-1.0-0-dev 
