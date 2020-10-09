@@ -19,7 +19,7 @@
 
     - name: "Stow .dotfiles"
       shell:
-        cmd: stow -vSt ~ bash htop git vim > ../.stowed.flag
+        cmd: stow -vSt ~ bash htop git vim tmux > ../.stowed.flag
         chdir: ~/.dotfiles
         creates: ~/.stowed.flag
 
