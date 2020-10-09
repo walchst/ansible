@@ -59,6 +59,11 @@
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo                                                                                      
     #    method: user
 
+- name: "Create /mnt/roms"
+  file:
+    path: /mnt/roms
+    state: directory 
+
 - name: "set vm.swappiness to 10 in /etc/sysctl.conf"
   sysctl:
     name: vm.swappiness
