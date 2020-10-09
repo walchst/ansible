@@ -2,7 +2,8 @@
 An ongoing effort to automate my various linux builds
 
 # install
-download repo
+wget -P ~/Downloads https://github.com/walchst/ansible/archive/master.zip
+unzip ~/Downloads/master.zip
 su -i
 apt install -y ansible
 ansible-playbook local.yml -K
