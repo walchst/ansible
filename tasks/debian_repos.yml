@@ -4,15 +4,15 @@
 
 - name: "Debian - update repos"
   block:
-    #    - name: "Debian - add closest mirror with non-free and contrib repos"
-    #  apt_repository:
-    #    repo: deb http://mirror.amaze.com.au/debian/ bullseye main non-free contrib
-    #    state: present
+    - name: "Debian - add closest mirror with non-free and contrib repos"
+      apt_repository:
+        repo: deb http://deb.debian.org/debian/ bullseye main non-free contrib
+        state: present
 
-    #    - name: "Debian - add closest source mirror with non-free and contrib repos"
-    #  apt_repository:
-    #    repo: deb-src http://mirror.amaze.com.au/debian/ bullseye main non-free contrib
-    #    state: present
+    - name: "Debian - add closest source mirror with non-free and contrib repos"
+      apt_repository:
+        repo: deb-src http://deb.debian.org/debian/ bullseye main non-free contrib
+        state: present
 
     - name: "Debian - add non-free and contrib security repos"
       apt_repository:
