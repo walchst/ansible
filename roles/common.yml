@@ -48,6 +48,7 @@
       - dpkg # required for Fedora
       - apt-transport-https # brave-browser
       - brave-browser
+      - powerline
     state: latest
   when: ansible_os_family == 'Debian'
 
