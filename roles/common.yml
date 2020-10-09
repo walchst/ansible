@@ -3,6 +3,18 @@
 - name: "get service facts"
   service_facts:
 
+- name: "Brave - add apt signing key"
+  apt_key:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
+    keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+    state: present
+
+- name : "Brave - add repo"
+  apt_repository: 
+    repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"
+    filename: brave-browser-release
+    state: present
+
 - name: "apt packages common"
   apt:
     name:
@@ -34,6 +46,8 @@
       - tree
       - pip
       - dpkg # required for Fedora
+      - apt-transport-https # brave-browser
+      - brave-browser
     state: latest
   when: ansible_os_family == 'Debian'
 
