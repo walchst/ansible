@@ -1,0 +1,10 @@
+---
+
+# System Monitor
+# https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet
+apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0
+
+# gnome_dash_to_dock_preferences:
+# # Apply Custom Theme
+#   - key: "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme"
+#       value: "true"
