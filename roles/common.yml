@@ -49,6 +49,7 @@
         #      - apt-transport-https # brave-browser
         #      - brave-browser
       - powerline
+      - chromium
     state: latest
   when: ansible_os_family == 'Debian'
 
