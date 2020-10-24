@@ -11,6 +11,7 @@
       - telegram-desktop 
       - remmina 
       - firmware-misc-nonfree
+      - pavucontrol # extend audio beyond 100%
     state: latest
   when: ansible_os_family == 'Debian'
  
