@@ -90,7 +90,7 @@
    - name: "gnome terminal shortcut command"
      dconf:
        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
-       value: "'gnome-terminal --maximize'"
+       value: "'gnome-terminal'"
  
    - name: "gnome terminal shortcut binding"
      dconf:
@@ -134,4 +134,9 @@
      dconf:
        key: "/org/gnome/desktop/interface/enable-hot-corners"
        value: "false"
+
+   - name: "gnome enable over-amplification"
+     dconf:
+       key: "/org/gnome/desktop/sound/over-amplification"
+       value: "true"
 
