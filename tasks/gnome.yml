@@ -137,6 +137,6 @@
 
    - name: "gnome enable over-amplification"
      dconf:
-       key: "/org/gnome/desktop/sound/over-amplification"
+       key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
        value: "true"
 
