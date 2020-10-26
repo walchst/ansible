@@ -42,7 +42,7 @@
       - iperf
       - cifs-utils
       - hardinfo
-      - tmux
+        #      - tmux
       - tree
       - pip
       - dpkg # required for Fedora
