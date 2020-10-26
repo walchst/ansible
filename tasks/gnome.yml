@@ -140,3 +140,8 @@
        key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
        value: "true"
 
+   - name: "dconf-editor disable warning"
+     dconf:
+       key: "/ca/desrt/dconf-editor/show-warning"
+       value: "false"
+
