@@ -17,10 +17,7 @@ sudo ansible-pull --url https://github.com/walchst/ansible.git -K
 
  - steam: returns errors during apt install, flatpak?
  - xow: check for running service and skip
- - gnome failed as su, needed to exit and re-run with user account
  - enable automatic updates
- - add chromium to favorites
- - remove from favorites: firefox, help, libreoffice-writer
  - make chromium default browser
  - install spacevim (curl -sLf https://spacevim.org/install.sh | bash)
  
