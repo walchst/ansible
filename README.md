@@ -4,8 +4,7 @@ An ongoing effort to automate my various linux builds
 # install
 wget -P ~/Downloads https://github.com/walchst/ansible/archive/master.zip
 unzip ~/Downloads/master.zip
-su -i
-apt install -y ansible
+sudo apt install -y ansible
 ansible-playbook local.yml -K
 
 # fully automated (work in progress) - run this script
@@ -20,6 +19,10 @@ sudo ansible-pull --url https://github.com/walchst/ansible.git -K
  - xow: check for running service and skip
  - gnome failed as su, needed to exit and re-run with user account
  - enable automatic updates
+ - add chromium to favorites
+ - remove from favorites: firefox, help, libreoffice-writer
+ - make chromium default browser
+ - install spacevim (curl -sLf https://spacevim.org/install.sh | bash)
  
 # TODO Fedora
 
@@ -30,3 +33,4 @@ sudo ansible-pull --url https://github.com/walchst/ansible.git -K
  - install dpkg or use alternative method for Fedora
  - xow libusb not required for fedora
  - build xow failed      
+
