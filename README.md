@@ -18,8 +18,9 @@ sudo ansible-pull --url https://github.com/walchst/ansible.git -K
  - steam: returns errors during apt install, flatpak?
  - xow: check for running service and skip
  - enable automatic updates
- - make chromium default browser
+ - make google chrome default browser
  - install spacevim (curl -sLf https://spacevim.org/install.sh | bash)
+ - generate SSH key for github
  
 # TODO Fedora
 
