@@ -3,9 +3,9 @@ An ongoing effort to automate my various linux builds
 
 # install
 wget -P ~/Downloads https://github.com/walchst/ansible/archive/master.zip
-unzip ~/Downloads/master.zip
+unzip ~/Downloads/master.zip -d ~/Downloads/
 sudo apt install -y ansible
-ansible-playbook local.yml -K
+ansible-playbook ~/Downloads/ansible-master/local.yml -K
 
 # fully automated (work in progress) - run this script
 bash wget -qO- https://github.com/walchst/ansible/run.sh | sudo bash
@@ -18,9 +18,10 @@ sudo ansible-pull --url https://github.com/walchst/ansible.git -K
  - steam: returns errors during apt install, flatpak?
  - xow: check for running service and skip
  - enable automatic updates
- - make google chrome default browser
+ - make google chrome default browser  # prompts on first run anyhow
  - install spacevim (curl -sLf https://spacevim.org/install.sh | bash)
  - generate SSH key for github
+ - add applications to favourites
  
 # TODO Fedora
 
