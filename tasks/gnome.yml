@@ -149,3 +149,9 @@
      dconf:
        key: "/ca/desrt/dconf-editor/show-warning"
        value: "false"
+
+   - name: "gnome automatic suspend while plugged in to 1hr"
+     dconf:
+       key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout"
+       value: "uint32 3600"
+
