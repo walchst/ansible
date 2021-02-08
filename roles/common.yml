@@ -3,17 +3,17 @@
 - name: "get service facts"
   service_facts:
 
-    #- name: "Brave - add apt signing key"
-    #  apt_key:
-    #    url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
-    #    keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
-    #    state: present
-    #
-    #- name : "Brave - add repo"
-    #  apt_repository: 
-    #    repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"
-    #    filename: brave-browser-release
-    #    state: present
+- name: "brave - add apt signing key"
+  apt_key:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
+    keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+    state: present
+
+- name: "brave - add repo"
+  apt_repository: 
+    repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"
+    filename: brave-browser-release
+    state: present
 
 - name: "gather package facts"
   package_facts: 
@@ -50,10 +50,9 @@
       - tree
       - pip
       - dpkg # required for Fedora
-        #      - apt-transport-https # brave-browser
-        #      - brave-browser
+      - apt-transport-https # brave-browser
+      - brave-browser
       - powerline
-        #       - chromium
       - gir1.2-gtop-2.0 # prereq for system monitor gnome extension 
       - gir1.2-nm-1.0 # prereq for system monitor gnome extension
       - gir1.2-clutter-1.0 # prereq for system monitor gnome extension
@@ -68,18 +67,18 @@
     state: present                                                                                                                                        
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo                                                                                      
 
-- name: "check if google chrome installed"
-  shell:
-    cmd: dpkg-query -l | grep google-chrome-stable
-  register: deb_chrome_check
-  changed_when: deb_chrome_check.rc == 1
-  ignore_errors: yes
-  
-- name: "install google chrome"
-  apt:
-    deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    state: present
-  when: deb_chrome_check.changed
+      #- name: "check if google chrome installed"
+      #  shell:
+      #    cmd: dpkg-query -l | grep google-chrome-stable
+      #  register: deb_chrome_check
+      #  changed_when: deb_chrome_check.rc == 1
+      #  ignore_errors: yes
+      #  
+      #- name: "install google chrome"
+      #  apt:
+      #    deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      #    state: present
+      #  when: deb_chrome_check.changed
 
 - name: "Create /mnt/roms"
   file:
