@@ -58,6 +58,8 @@
       - gir1.2-clutter-1.0 # prereq for system monitor gnome extension
       - dconf-editor 
       - xclip
+      - lhasa
+      - jlha-utils
     state: latest
   when: ansible_os_family == 'Debian'
 
