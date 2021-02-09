@@ -124,4 +124,10 @@
         #      get_url:
         #        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         #        dest: ~//.vim/autoload/plug.vim
-      
+
+- name: "generate OpenSSH keypair with default values"
+  community.crypto.openssh_keypair:
+    path: /home/walchst/.ssh/id_rsa
+    owner: walchst
+    group: walchst
+
