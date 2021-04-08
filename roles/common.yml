@@ -60,6 +60,7 @@
       - xclip
       - lhasa
       - jlha-utils
+      - mtr # trace route utility
     state: latest
   when: ansible_os_family == 'Debian'
 
