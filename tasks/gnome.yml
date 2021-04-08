@@ -65,11 +65,16 @@
        key: "/org/gnome/desktop/peripherals/touchpad/tap-to-click" 
        value: "true"
 
-   - name: "gnome enable trackpad natural scroll"
+   - name: "gnome disable mouse natural scroll"
      dconf: 
        key: "/org/gnome/desktop/peripherals/mouse/natural-scroll" 
-       value: "true"
+       value: "false"
 
+   - name: "gnome enable touchpad natural scroll"
+     dconf: 
+       key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll" 
+       value: "true"
+         
    - name: "gnome set wallpaper"
      dconf: 
        key: "/org/gnome/desktop/background/picture-uri" 
