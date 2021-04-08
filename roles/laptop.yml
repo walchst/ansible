@@ -13,6 +13,7 @@
       - firmware-misc-nonfree
       - pavucontrol # extend audio beyond 100%
       - drawing # gnome drawing
+      - openresolv # wireguard dependency
     state: latest
   when: ansible_os_family == 'Debian'
  
