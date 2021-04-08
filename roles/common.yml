@@ -61,6 +61,8 @@
       - lhasa
       - jlha-utils
       - mtr # trace route utility
+      - ufw # uncomplicated firewall
+      - gufw # GUI for ufw
     state: latest
   when: ansible_os_family == 'Debian'
 
