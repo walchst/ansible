@@ -43,8 +43,8 @@
     - include: tasks/gnome.yml
       when: lookup('env','DESKTOP_SESSION') == "gnome"
 
-    - include: tasks/gnome-extensions.yml
-      when: lookup('env','DESKTOP_SESSION') == "gnome"
+        #    - include: tasks/gnome-extensions.yml
+        #      when: lookup('env','DESKTOP_SESSION') == "gnome"
         
     - include: tasks/cleanup.yml
 
