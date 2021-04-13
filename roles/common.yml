@@ -63,6 +63,7 @@
       - mtr # trace route utility
       - ufw # uncomplicated firewall
       - gufw # GUI for ufw
+      - ncdu # review diskspace
     state: latest
   when: ansible_os_family == 'Debian'
 
