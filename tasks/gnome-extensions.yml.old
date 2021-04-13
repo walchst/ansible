@@ -1,0 +1,33 @@
+---
+
+- role: jaredhocutt.gnome_extensions
+  vars:
+    gnome_extension_ids:
+      - 708 
+      - 517 
+
+            #
+            #- name: "Install GNOME extensions"
+            #  become_user: walchst
+            #  become: true
+            #  block:
+            #
+            #    - role: jaredhocutt.gnome_extensions 
+            #      vars:
+            #        gnome_extension_ids:
+            #          - 708 # Panel OSD
+            #          - 517 # Caffine
+            #          - 120 # System Monitor
+            #          - 1319 # TEST GS Connect
+            # 
+
+
+# System Monitor
+# https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet
+#apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0
+
+# gnome_dash_to_dock_preferences:
+# # Apply Custom Theme
+#   - key: "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme"
+#       value: "true"
+
