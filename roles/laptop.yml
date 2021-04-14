@@ -14,6 +14,7 @@
       - pavucontrol # extend audio beyond 100%
       - drawing # gnome drawing
       - openresolv # wireguard dependency
+      - screen # console access to switch
     state: latest
   when: ansible_os_family == 'Debian'
  
