@@ -1,10 +1,11 @@
 ---
 
-- name: "gnome shit"
-  gnome_extension_ids:
-    - 708 # Panel OSD
-    - 517 # Caffine
-    - 120 # System Monitor
-      #  roles:
-      #      - jaredhocutt.gnome-extensions
-              
+- name: "Install GNOME extensions"
+  hosts: localhost 
+  roles:
+    - role: jaredhocutt.gnome_extensions
+      vars:
+        gnome_extension_ids:
+          - 708 # Panel OSD
+          - 517 # Caffine
+          - 120 # System Monitor
