@@ -148,7 +148,7 @@
    - name: "gnome favourite apps"
      dconf:
        key: "/org/gnome/shell/favorite-apps"
-       value: "['microsoft-edge-dev.desktop', 'org.gnome.Nautilus.desktop']" 
+       value: "['microsoft-edge-dev.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']" 
 
    - name: "dconf-editor disable warning"
      dconf:
